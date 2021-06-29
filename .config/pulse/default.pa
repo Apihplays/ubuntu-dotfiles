@@ -4,9 +4,11 @@
 # null sink
 .ifexists module-null-sink.so
 load-module module-null-sink sink_name=Source
+load-module module-null-sink sink_name=SpeakerSource
 .endif
 
 # virtual source
 .ifexists module-virtual-source.so
 load-module module-virtual-source source_name=VirtualMic master=Source.monitor
+oad-module module-virtual-source source_name=VirtualSpeaker master=SpeakerSource.monitor
 .endif
